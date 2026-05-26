@@ -19,6 +19,7 @@ echo "<?xml version=\"1.0\" encoding=\"utf-8\" ?>";
   <title>Culturanked</title>
   <link rel="stylesheet" type="text/css" href="css/styles.css">
   <link rel="stylesheet" type="text/css" href="css/home.css">
+  <link rel="stylesheet" type="text/css" href="css/register.css">
 
     <script src="js/script.js"></script>
 
