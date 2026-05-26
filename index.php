@@ -7,6 +7,8 @@
 	$view = valider("view"); 
 	if (!$view) $view = "home"; 
 
+	include("templates/header.php");
+
 	// En fonction de la vue à afficher, on appelle tel ou tel template
 	switch($view)
 	{		
@@ -15,12 +17,25 @@
 			include("templates/home.php");
 		break;
 
+		case 'navbar':
+		case 'header':
+		case 'footer':
+			include("templates/home.php");
+		break;
+
+		case 'register':
+			include("templates/register.php");
+		break;
+
 
 		default : // si le template correspondant à l'argument existe, on l'affiche
-			if (file_exists("templates/$view.php"))
+			if (file_exists("templates/$view.php")) {
                 include("templates/navbar.php");
 				include("templates/$view.php");
+			}
 
 	}
+
+	include("templates/footer.php");
 	
 ?>

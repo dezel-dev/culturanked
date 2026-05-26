@@ -17,8 +17,6 @@ if (basename($_SERVER["PHP_SELF"]) != "index.php")
 ?>
 
 
-<div id="navbar">
-
-<h1>Navbar</h1>
+<div id="register">
 
 </div>

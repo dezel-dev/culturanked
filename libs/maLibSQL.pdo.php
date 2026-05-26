@@ -6,7 +6,7 @@
 if (file_exists("/_config_/config.php")) {
   include_once "/_config_/config.php";
 } else {
-  include_once "libs/config.php";
+  include_once "../libs/config.php";
 }
 
 /**
