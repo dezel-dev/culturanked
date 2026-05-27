@@ -19,6 +19,11 @@ if ($action = valider("action"))
     case 'Lobby' :
       // On redirigera vers la page index automatiquement
     break;    
+
+    case 'gotoConnect' :
+        // On regarde si l'utilisateur est déjà connecté => vers lobby.php
+        // Sinon vers login.php
+    break;    
     
   }
 }
