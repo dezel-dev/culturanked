@@ -16,7 +16,7 @@ if (basename($_SERVER["PHP_SELF"]) != "index.php")
     <div class="form-group"> 
         <input type="text" class="form-control" id="email" name="email" placeholder="Adresse mail">
     </div>
-    <button type="submit" name="action" value="Connexion" class="btn btn-default" id="valider">Valider</button>
+    <button type="submit" name="action" value="SendEmail" class="btn btn-default" id="valider">Valider</button>
     <?php ?>
     </form>
     <div class="link">
