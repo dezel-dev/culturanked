@@ -18,5 +18,17 @@ if (basename($_SERVER["PHP_SELF"]) != "index.php")
 
 
 <div id="register">
-
+	<h1>S'inscrire</h1>
+	<form action="./controllers/userController.php">
+		<input type="text" placeholder="Nom d'utilisateur"/> <br>
+		<input type="text" placeholder="Adresse mail"/> <br>
+		<input type="password" placeholder="Mot de passe"/> <br>
+		<input type="password" placeholder="Confirmer le mot de passe"/> <br>
+		<div id="notifications">
+			<div class="characters">
+				<img src="./ressources/culturanked/valid.png" alt="">
+				<p>8 caractères minimum</p>
+			</div>
+		</div>
+	</form>
 </div>

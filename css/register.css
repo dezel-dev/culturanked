@@ -1,0 +1,16 @@
+#register
+{
+    padding: 20px;
+    text-align: center;
+    margin-top: 50px;
+}
+
+#register form input
+{
+    margin-top: 10px;
+}
+
+#notifications img
+{
+    width: 32px;
+}
