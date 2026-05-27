@@ -1,0 +1,54 @@
+#login 
+{
+    padding: 20px;
+    text-align: center;
+    margin-top: 50px;
+}
+
+#login form input
+{
+    margin-top: 10px;
+}
+
+.form-control
+{
+    width : 25%;
+    border : black 2px solid;
+    padding: 12px 15px;
+    border-radius: 5px;
+    background: transparent;
+    box-sizing: border-box;
+}
+
+#valider 
+{
+    margin-top : 20px;
+    background-color: black; 
+    color: white;
+    font-size: bold;
+    width: 25%;
+    border : none;
+    padding: 12px 15px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+#valider:hover
+{
+    background-color: #333;
+}   
+
+h1 {
+    font-size: 2.5rem;
+    color: black;
+    margin-bottom: 40px;
+}
+
+.active{
+    margin-top: 10px;
+}
+
+
+.checkbox {
+    margin-top: 10px;
+}
