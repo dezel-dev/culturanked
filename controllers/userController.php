@@ -21,8 +21,14 @@ if ($action = valider("action"))
     break;    
 
     case 'gotoConnect' :
-        // On regarde si l'utilisateur est déjà connecté => vers lobby.php
-        // Sinon vers login.php
+       if (!valider("connecte","SESSION")) {
+        header("Location:../templates/login.php");
+        die("");
+       }
+       else { 
+        header("Location:../index.php?view=lobby");
+        die("");
+       }
     break;    
     
   }

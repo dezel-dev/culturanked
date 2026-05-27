@@ -27,6 +27,10 @@
 			include("templates/register.php");
 		break;
 
+		case 'login':
+			include("templates/login.php");
+		break;
+
 
 		default : // si le template correspondant à l'argument existe, on l'affiche
 			if (file_exists("templates/$view.php")) {
