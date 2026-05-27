@@ -31,6 +31,10 @@
 			include("templates/login.php");
 		break;
 
+		case 'forgotLogin':
+			include("templates/forgotLogin.php");
+		break;
+
 
 		default : // si le template correspondant à l'argument existe, on l'affiche
 			if (file_exists("templates/$view.php")) {
