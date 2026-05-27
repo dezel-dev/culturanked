@@ -42,7 +42,6 @@
 
 		default : // si le template correspondant à l'argument existe, on l'affiche
 			if (file_exists("templates/$view.php")) {
-                include("templates/navbar.php");
 				include("templates/$view.php");
 			}
 

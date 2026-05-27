@@ -1,16 +1,46 @@
-#register
-{
+#register {
+    width: 100%;
+    max-width: 500px;
+    margin: 50px auto;
     padding: 20px;
+}
+
+#register h1 {
+    font-size: 32px;
+    color: #000;
+    margin-bottom: 30px;
     text-align: center;
-    margin-top: 50px;
 }
 
-#register form input
-{
-    margin-top: 10px;
+#notifications {
+    width: 100%;
+    margin-bottom: 20px;
 }
 
-#notifications img
-{
-    width: 32px;
+#notifications > div {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+#notifications div img {
+    width: 20px;
+    margin-right: 10px;
+}
+
+#notifications p {
+    font-size: 13px;
+}
+
+#notifications p.valid {
+    color: green;
+}
+
+#notifications p.invalid {
+    color: red;
+}
+
+#register .button {
+    display: block;
+    width: 100%;
 }

@@ -1,15 +1,11 @@
 #topbar {
     padding: 20px 40px;
-    overflow: hidden;
-}
-
-h1, p {
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: 100;
+    overflow: auto;
 }
 
 .title {
     font-size: 24px;
+    font-weight: 100;
     float: left;
 }
 
@@ -17,41 +13,33 @@ h1, p {
     float: right;
 }
 
-#topbar form button:first-child, #topbar form a:first-child {
-    margin-right: 10px;
+#topbar form .button {
+    margin-left: 10px;
 }
 
 #content {
     width: 100%;
-    max-width: 100%;
-    margin: 80px auto 0 auto;
+    max-width: 600px;
+    margin: 150px auto 0 auto;
     text-align: center;
-}
-
-#slogan, #subtitle, #content form {
-    display: block;
-    margin: 20px auto;
-}
-
-#slogan {
-    width: 300px;
+    padding: 0 20px;
 }
 
 #slogan h1 {
     font-size: 40px;
-    margin: 0;
+    font-weight: bold;
+    margin-bottom: 20px;
 }
 
-#subtitle {
-    width: 80%;
-    max-width: 520px;
+#subtitle p {
+    font-size: 16px;
+    margin-bottom: 10px;
+    line-height: 1.5;
 }
 
-#content form button {
+#content form .button {
+    width: 500px;
     padding: 20px 100px;
     font-size: 20px;
-}
-
-#content form button:hover {
-    text-decoration: none;
+    margin-top: 20px;
 }
