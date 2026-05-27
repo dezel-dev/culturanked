@@ -3,7 +3,7 @@
 // Si la page est appelée directement par son adresse, on redirige en passant pas la page index
 if (basename($_SERVER["PHP_SELF"]) != "index.php")
 {
-	header("Location:../index.php?view=home");
+	header("Location:../index.php?view=login");
 	die("");
 }
 
@@ -31,15 +31,17 @@ if ($checked = valider("remember", "COOKIE")) $checked = "checked";
   <div class="form-group">
     <input type="password" class="form-control" id="pwd" name="passe" value="<?php echo $passe;?>" placeholder="Mot de passe">
   </div>
-  <div>
-    <li class="active"><a href="index.php?view=forgotLogin">Mot de passe oublié ?</a></li>
+  <div class="link">
+    <a href="index.php?view=forgotLogin">Mot de passe oublié ?</a>
   </div>
   <div class="checkbox">
     <label><input type="checkbox" name="remember" id="check" <?php echo $checked;?> >Se souvenir de moi</label>
   </div>
   <button type="submit" name="action" value="Connexion" class="btn btn-default" id="valider">Valider</button>
 </form>
-    <li class="active"><a href="index.php?view=register">Pas de compte ? Inscrivez-vous !</a></li>
+    <div class="link">
+    <a href="index.php?view=register">Pas de compte ? Inscrivez-vous !</a>
+    </div>
 </div>
 
 
