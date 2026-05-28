@@ -17,7 +17,14 @@ if ($action = valider("action"))
   switch($action)
   {
     case 'Lobby' :
-      // On redirigera vers la page index automatiquement
+      if (valider("connecte","SESSION")) {
+        header("Location:../templates/lobby.php");
+        die("");
+       }
+       else { 
+        header("Location:../index.php?view=login.php");
+        die("");
+       }
     break;    
 
     case 'gotoConnect' :
