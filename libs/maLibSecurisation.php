@@ -21,4 +21,15 @@ function securiser($urlBad,$urlGood=false)
 	}
 }
 
+// Renvoie 1 si un mot de passe respecte les conditions
+// Renvoie 0 sinon
+function validerPassword($password)
+{
+	$len = strlen($password);
+	if ($len < 8) {
+		return 0;
+	}
+	return 1;
+}
+
 ?>

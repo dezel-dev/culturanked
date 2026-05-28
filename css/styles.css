@@ -50,6 +50,15 @@ body {
     font-size: 14px;
 }
 
+.button:disabled {
+    opacity: 0.75;
+}
+
+.button:disabled:hover {
+    cursor:not-allowed;
+    text-decoration: none;
+}
+
 .link {
     margin: 12px 0;
     text-align: center;

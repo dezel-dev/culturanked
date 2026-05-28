@@ -15,9 +15,9 @@ function verifUserBdd($login,$passe)
 	return SQLGetChamp($SQL);
 }
 
-function ajouterUsers($pseudo,$email,$passe)
+function registerUser($pseudo,$email,$passe)
 {
-    $SQL="INSERT INTO users(`username`, `email`, `password`) VALUES (`$pseudo`,`$email`,`$passe`);";
+    $SQL="INSERT INTO users(`username`, `email`, `password`) VALUES ('$pseudo','$email','$passe');";
     return SQLInsert($SQL);
 }
 
@@ -73,5 +73,30 @@ WHERE game_id = $id_partie
 ORDER BY game_questions.order ASC;
 ";
 return SQLSelect($SQL);
+}
+
+function isUsernameUnique($username)
+{
+    $SQL = "SELECT username FROM users WHERE users.username='$username'";
+    $res = SQLGetChamp($SQL);
+
+    if ($res == '') {
+        // Aucun username qui correspond
+        return 1;
+    }
+
+    return 0;
+}
+
+function getPassword($email)
+{
+    $SQL = "SELECT password FROM users WHERE users.email='$email'";
+    $res = SQLGetChamp($SQL);
+
+    if ($res == '') {
+        return 0;
+    }
+
+    return $res;
 }
 ?>

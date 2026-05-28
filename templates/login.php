@@ -18,14 +18,14 @@ $checked = valider("remember", "COOKIE") ? "checked" : "";
 	<h1>Se connecter</h1>
 	<?=$msgHTML?>
     <form action="./controllers/userController.php">
-        <input type="text" class="input" id="email" name="login" value="<?php echo $login;?>" placeholder="Nom d'utilisateur">
-        <input type="password" class="input" id="pwd" name="passe" value="<?php echo $passe;?>" placeholder="Mot de passe">
+        <input type="text" class="input" id="username" name="username" value="<?php echo $login;?>" placeholder="Nom d'utilisateur">
+        <input type="password" class="input" id="password" name="password" value="<?php echo $passe;?>" placeholder="Mot de passe">
         
         <div class="checkbox">
             <label><input type="checkbox" name="remember" id="check" <?php echo $checked;?> > Se souvenir de moi</label>
         </div>
         
-        <button type="submit" name="action" value="Connexion" class="button secondary" id="valider">Valider</button>
+        <button type="submit" name="action" value="loginUser" class="button secondary" id="valider">Valider</button>
     </form>
     
     <div class="link">
