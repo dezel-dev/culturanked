@@ -16,24 +16,24 @@ if ($action = valider("action"))
   // Un paramètre action a été soumis, on fait le boulot...
   switch($action)
   {
-    case 'Lobby' :
-      if (valider("connecte","SESSION")) {
-        header("Location:../templates/lobby.php");
+    case 'gotoLobby' :
+      if (!valider("connecte","SESSION")) {
+        header("Location:../index.php?view=lobby");
         die("");
        }
        else { 
-        header("Location:../index.php?view=login.php");
+        header("Location:../index.php?view=login");
         die("");
        }
     break;    
 
     case 'gotoConnect' :
        if (!valider("connecte","SESSION")) {
-        header("Location:../templates/login.php");
+        header("Location:../index.php?view=login");
         die("");
        }
        else { 
-        header("Location:../index.php?view=lobby");
+        header("Location:../index.php?view=home");
         die("");
        }
     break;    
@@ -102,7 +102,7 @@ if ($action = valider("action"))
   }
 }
 
-die("");
+//die("");
 // Redirection
 $urlBase = dirname($_SERVER["PHP_SELF"]) . "../index.php";
 header("Location:" . $urlBase . $qs);

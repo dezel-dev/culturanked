@@ -21,6 +21,9 @@ echo "<?xml version=\"1.0\" encoding=\"utf-8\" ?>";
   <link rel="stylesheet" type="text/css" href="css/home.css">
   <link rel="stylesheet" type="text/css" href="css/register.css">
   <link rel="stylesheet" type="text/css" href="css/login.css">
+  <link rel="stylesheet" type="text/css" href="css/navbar.css">
+  <link rel="stylesheet" type="text/css" href="css/social.css">
+  <link rel="stylesheet" type="text/css" href="css/lobby.css">
 
     <script src="js/register.js"></script>
     <script src="js/script.js"></script>

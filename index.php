@@ -17,7 +17,7 @@
 			include("templates/home.php");
 		break;
 
-		case 'navbar':
+		//case 'navbar':
 		case 'header':
 		case 'footer':
 			include("templates/home.php");
