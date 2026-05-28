@@ -35,7 +35,7 @@ function ModifierMDP($id,$passe)
 function classement()
 {
     $SQL="SELECT username, elo, SUM(ranked_wins + ranked_loose) AS total_parties FROM users JOIN stats ON id=player_id GROUP BY id, username, elo ORDER BY elo DESC LIMIT 20;";
-    return SQLSelect($SQL);
+    return parcoursRs(SQLSelect($SQL));
 }
 
 function rangParElo ($elo_min,$elo_max)
