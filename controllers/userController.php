@@ -18,11 +18,11 @@ if ($action = valider("action"))
   {
     case 'gotoLobby' :
       if (!valider("connecte","SESSION")) {
-        header("Location:../index.php?view=lobby");
+        header("Location:../index.php?view=login");
         die("");
        }
        else { 
-        header("Location:../index.php?view=login");
+        header("Location:../index.php?view=lobby");
         die("");
        }
     break;    
@@ -33,7 +33,7 @@ if ($action = valider("action"))
         die("");
        }
        else { 
-        header("Location:../index.php?view=home");
+        header("Location:../index.php?view=lobby");
         die("");
        }
     break;    

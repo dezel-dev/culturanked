@@ -5,6 +5,8 @@ if (basename($_SERVER["PHP_SELF"]) != "index.php") {
 }
 
 $mode = isset($_GET['mode']) ? $_GET['mode'] : 'classique';
+
+include("navbar.php");
 ?>
 
 <?php 
