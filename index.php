@@ -39,6 +39,10 @@
 			include("templates/reset.php");
 		break;
 
+		case 'social' : 
+			include("templates/lobby.php");
+		break;
+
 
 		default : // si le template correspondant à l'argument existe, on l'affiche
 			if (file_exists("templates/$view.php")) {

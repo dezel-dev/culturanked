@@ -1,0 +1,28 @@
+.gamemode {
+    text-align : right;
+    padding-right : 100 px;
+    display: flex;
+    justify-content: center; /* Aligne les onglets au milieu */
+    max-width: 400px;
+}
+
+.frame {
+    border : black 2px solid;
+    text-align : right;
+    padding : 10px;
+    margin-right : 100px;
+    background-color : lightgrey;   
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.body {
+    width: 100%;
+    max-width: 650px;
+    padding: 20px;
+}
+
+.content{
+    text-align : center;
+}
