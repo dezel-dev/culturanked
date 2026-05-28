@@ -1,28 +1,42 @@
 .gamemode {
     text-align : right;
     padding-right : 100 px;
-    display: flex;
-    justify-content: center; /* Aligne les onglets au milieu */
-    max-width: 400px;
+    display : flex;
+    justify-content : center;
+    margin-bottom : 10px;
+       
 }
 
 .frame {
     border : black 2px solid;
-    text-align : right;
-    padding : 10px;
     margin-right : 100px;
     background-color : lightgrey;   
     justify-content: center;
-    align-items: center;
-    
+    text-align : right;   
+    flex : 2;
+    border-radius: 8px; 
+    padding: 40px 30px;
 }
 
 .body {
     width: 100%;
     max-width: 650px;
     padding: 20px;
+    position : absolute;
+    right : 115px;
+    top : 250px;
 }
 
 .content{
     text-align : center;
+}
+
+.button.third, a.button.third {
+    background-color: lightgrey;
+    color: black;
+    border: 1px solid black;
+    padding :15px;
+    margin : 5px;
+    width : 100%;
+    max-width: 650px;
 }
