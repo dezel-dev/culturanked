@@ -16,10 +16,10 @@ $mode = isset($_GET['mode']) ? $_GET['mode'] : 'classique';
 
 
 ?>
-
+<div class="body">
 <div class="gamemode">
-            <a class="link_mode" href="?view=lobby&mode=classic" class="tab <?php echo ($mode === 'classic') ? 'active' : ''; ?>">Classique</a>
-            <a class="link_mode" href="?view=lobby&mode=ranked" class="tab <?php echo ($mode === 'ranked') ? 'active' : ''; ?>">Classée</a>
+            <a class="button primary" href="?view=lobby&mode=classic">Classique</a>
+            <a class="button primary" href="?view=lobby&mode=ranked" >Classée</a>
             
 </div>
 
@@ -28,12 +28,16 @@ $mode = isset($_GET['mode']) ? $_GET['mode'] : 'classique';
 switch($mode) {
     case 'ranked' :
         echo "<div class=\"frame\">
+                <div class=\"content\">
                  <h2>Configuration du salon - Classé</h2>
-                 <button class=\"btn-launch\" ;>Trouver un match</button>
-                 </div";
+                 <button type=\"submit\" value=\"launchRanked\" class=\"button primary\">Lancer un partie</button>
+                </div>
+                 </div>";
+                
     break;
     case 'classic' : 
         echo"<div class=\"frame\">
+        <div class=\"content\">
         <h2>Configuration du salon - Classique</h2>
         <label for=\"theme-select\">Thème :</label>
                         <div class=\"theme-select\">
@@ -45,7 +49,8 @@ switch($mode) {
                                 <option value=\"aleatoire\">Aléatoire</option>
                             </select>
                         </div>
-                        <button class=\"btn-launch\" ;>Trouver un match</button>
+                        <button type=\"submit\" value=\"launchClassic\" class=\"button primary\">Lancer un partie</button>
+                        </div>
                     </div>
         
         
@@ -54,3 +59,4 @@ switch($mode) {
         break;
 }
 ?>
+</div>
