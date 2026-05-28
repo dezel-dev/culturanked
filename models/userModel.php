@@ -17,8 +17,13 @@ function verifUserBdd($login,$passe)
 
 function registerUser($pseudo,$email,$passe)
 {
+    // On insert dans users
     $SQL="INSERT INTO users(`username`, `email`, `password`) VALUES ('$pseudo','$email','$passe');";
-    return SQLInsert($SQL);
+    $id = SQLInsert($SQL);
+
+    $SQL="INSERT INTO stats(`player_id`) VALUES('$id')";
+    SQLInsert($SQL);
+    return $id;
 }
 
 function ModifierMDP($id,$passe)

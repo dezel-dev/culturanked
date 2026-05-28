@@ -16,19 +16,22 @@ if (basename($_SERVER["PHP_SELF"]) != "index.php")
 
 ?>
 
-
 <div id="navbar">
 	<div id="topbar">
         <h1 class="title">Culturanked</h1>
 		<div class="link-navbar">
-        <a href="index.php?view=lobby&cat=play">Jouer</a> 
-        <a href="index.php?view=lobby&cat=career">Carrière</a> 
-        <a href="index.php?view=lobby&cat=ranking">Classement</a> 
-        <a href="index.php?view=lobby&cat=social">Social</a>
-    </div>
-        <form action="./controllers/userController.php" id="btnprofil">
-            <a href="index.php?view=profil" class="button primary">Profil</a>
-        </form>
+            <a href="index.php?view=lobby&cat=play">Jouer</a> 
+            <a href="index.php?view=lobby&cat=career">Carrière</a> 
+            <a href="index.php?view=lobby&cat=ranking">Classement</a> 
+            <a href="index.php?view=lobby&cat=social">Social</a>
+        </div>
+        
+        <div id="btnprofil" class="dropdown">
+            <img class="account-btn" src="./ressources/culturanked/account.png" alt="Account">
+            <div class="dropdown-content">
+                <a href="index.php?view=profil">Voir profil</a>
+                <a href="./controllers/userController.php?action=logout">Déconnexion</a>
+            </div>
+        </div>
     </div>
 </div>
-

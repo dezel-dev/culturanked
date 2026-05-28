@@ -1,16 +1,22 @@
 #topbar {
     padding: 20px 40px;
-    overflow: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .title {
     font-size: 24px;
     font-weight: 100;
-    float: left;
+}
+
+.topbar-right {
+    display: flex;
+    align-items: center;
 }
 
 #topbar form {
-    float: right;
+    display: inline-block;
 }
 
 #topbar form .button {

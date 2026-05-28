@@ -36,7 +36,15 @@ if ($action = valider("action"))
         header("Location:../index.php?view=lobby");
         die("");
        }
-    break;    
+    break; 
+    
+    case 'logout':
+      if (valider('connecte','SESSION')) {
+        session_destroy();
+        header('Location:../index.php?view=home');
+        die("");
+      }
+      break;
 
     case 'registerUser':
       // On récupère les infos passées en POST
@@ -74,7 +82,7 @@ if ($action = valider("action"))
 
       // Tout respecte bien, on peut enregistrer le user
       registerUser($username, $email, $password);
-      header("Location:../index.php?view=login&msg=Le ");
+      header("Location:../index.php?view=login");
       die(""); 
 
       break;
@@ -102,7 +110,7 @@ if ($action = valider("action"))
   }
 }
 
-//die("");
+// die("");
 // Redirection
 $urlBase = dirname($_SERVER["PHP_SELF"]) . "../index.php";
 header("Location:" . $urlBase . $qs);
