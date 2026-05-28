@@ -14,16 +14,17 @@ if (basename($_SERVER["PHP_SELF"]) != "index.php")
 	die("");
 }
 
+$cat = isset($_GET['cat']) ? $_GET['cat'] : 'play';
 ?>
 
 <div id="navbar">
 	<div id="topbar">
         <h1 class="title">Culturanked</h1>
 		<div class="link-navbar">
-            <a href="index.php?view=lobby&cat=play">Jouer</a> 
-            <a href="index.php?view=lobby&cat=career">Carrière</a> 
-            <a href="index.php?view=lobby&cat=ranking">Classement</a> 
-            <a href="index.php?view=lobby&cat=social">Social</a>
+            <a href="index.php?view=lobby&cat=play" class="<?php echo ($cat == 'play') ? 'select' : ''; ?>">Jouer</a> 
+            <a href="index.php?view=lobby&cat=career" class="<?php echo ($cat == 'career') ? 'select' : ''; ?>">Carrière</a> 
+            <a href="index.php?view=lobby&cat=ranking" class="<?php echo ($cat == 'ranking') ? 'select' : ''; ?>">Classement</a> 
+            <a href="index.php?view=lobby&cat=social" class="<?php echo ($cat == 'social') ? 'select' : ''; ?>">Social</a>
         </div>
         
         <div id="btnprofil" class="dropdown">
