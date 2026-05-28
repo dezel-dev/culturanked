@@ -1,0 +1,29 @@
+#topbar {
+display: flex;
+align-items: center;
+flex-direction: row;
+gap: 50px;
+}
+
+#btnprofil {
+margin-left: auto;
+}
+
+.link-navbar {
+    display: flex;
+    margin: 12px 0;
+    text-align: center;
+    vertical-align: auto;
+    gap:20px;
+}
+
+.link-navbar a {
+    color: #5e5c5c;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+.link-navbar .select {
+    color:black;
+    font-weight: bold;
+}

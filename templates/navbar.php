@@ -18,7 +18,17 @@ if (basename($_SERVER["PHP_SELF"]) != "index.php")
 
 
 <div id="navbar">
-
-<h1>Navbar</h1>
-
+	<div id="topbar">
+        <h1 class="title">Culturanked</h1>
+		<div class="link-navbar">
+        <a href="index.php?view=lobby&cat=play">Jouer</a> 
+        <a href="index.php?view=lobby&cat=career">Carrière</a> 
+        <a href="index.php?view=lobby&cat=ranking">Classement</a> 
+        <a href="index.php?view=lobby&cat=social">Social</a>
+    </div>
+        <form action="./controllers/userController.php" id="btnprofil">
+            <a href="index.php?view=profil" class="button primary">Profil</a>
+        </form>
+    </div>
 </div>
+

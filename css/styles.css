@@ -61,9 +61,19 @@ body {
     font-size: 14px;
 }
 
+.no-underline a
+{
+    text-decoration: none;
+}
+
 .alert-msg {
     color: red;
     margin-bottom: 15px;
     text-align: center;
+    font-weight: bold;
+}
+
+.select {
+    color: black;
     font-weight: bold;
 }
