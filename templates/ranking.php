@@ -3,7 +3,7 @@ if (basename($_SERVER["PHP_SELF"]) != "index.php") {
 	header("Location:../index.php?view=home");
 	die("");
 }
-include_once("../models/userModel.php");
+include_once("./models/userModel.php");
 $classement = classement();
 
 include("navbar.php");

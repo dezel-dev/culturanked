@@ -3,10 +3,10 @@
 // Merci de ne pas modifier les lignes suivantes pour faciliter la correction.
 // Si un fichier config.php existe dans le dossier _config_ alors il sera utilisé.
 // Sinon celui du dossier libs sera utilisé.
-if (file_exists("/_config_/config.php")) {
-  include_once "/_config_/config.php";
+if (file_exists(__DIR__ . "/../_config_/config.php")) {
+  include_once __DIR__ . "/../_config_/config.php";
 } else {
-  include_once "../libs/config.php";
+  include_once __DIR__ . "/config.php";
 }
 
 /**
