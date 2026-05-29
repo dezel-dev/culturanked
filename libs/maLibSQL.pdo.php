@@ -3,11 +3,7 @@
 // Merci de ne pas modifier les lignes suivantes pour faciliter la correction.
 // Si un fichier config.php existe dans le dossier _config_ alors il sera utilisé.
 // Sinon celui du dossier libs sera utilisé.
-if (file_exists(__DIR__ . "/../_config_/config.php")) {
-  include_once __DIR__ . "/../_config_/config.php";
-} else {
-  include_once __DIR__ . "/config.php";
-}
+include_once "config.php";
 
 /**
  * @file maLibSQL.php
@@ -167,7 +163,7 @@ function SQLSelect($sql)
 /**
 *
 * Parcours les enregistrements d'un résultat mysql et les renvoie sous forme de tableau associatif
-* On peut ensuite l'afficher avec la fonction print_r, ou le parcourir avec foreach
+* On peut ensuite l'afficher parcoursRsavec la fonction print_r, ou le parcourir avec foreach
 * @param resultat_Mysql $result
 */
 function parcoursRs($result)

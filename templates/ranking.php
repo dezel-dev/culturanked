@@ -6,14 +6,13 @@ if (basename($_SERVER["PHP_SELF"]) != "index.php") {
 include_once("./models/userModel.php");
 $classement = classement();
 
-include("navbar.php");
 ?>
 <div class="ranking">
     <div class="ranking-header">
         <select class="filter-select">
             <option value="global">Global</option>
         </select>
-        <span class="players-count"><?php echo count(classement()); ?> joueurs affichés (1/20)</span>
+        <span class="players-count"><?php echo count($classement); ?> joueurs affichés (1/20)</span>
     </div>
 
     <div class="ranking-list">

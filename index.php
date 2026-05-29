@@ -2,6 +2,7 @@
     session_start();
 
 	include_once "libs/maLibUtils.php";
+	include_once "libs/maLibSQL.pdo.php";
 
 	// on récupère le paramètre view éventuel 
 	$view = valider("view"); 
