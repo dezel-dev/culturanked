@@ -17,7 +17,7 @@ $classement = classement();
 
     <div class="ranking-list">
         <?php 
-        $position = 1; 
+        $position = 1;
 
         foreach ($classement as $joueur) {
             
