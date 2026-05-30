@@ -27,6 +27,7 @@ echo "<?xml version=\"1.0\" encoding=\"utf-8\" ?>";
 
     <script src="js/register.js"></script>
     <script src="js/script.js"></script>
+    <script src="js/play.js"></script>
 
   <style>
 

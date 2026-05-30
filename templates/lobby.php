@@ -4,7 +4,6 @@ if (basename($_SERVER["PHP_SELF"]) != "index.php") {
 	die("");
 }
 
-$mode = isset($_GET['mode']) ? $_GET['mode'] : 'classic';
 $cat = isset($_GET['cat']) ? $_GET['cat'] : 'play';
 
 include("navbar.php");

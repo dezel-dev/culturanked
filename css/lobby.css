@@ -46,3 +46,15 @@
     font-weight: bold;
     border: 2px solid black;
 }
+
+#time {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #f0f0f0; /* Un gris très clair */
+    border: 1px solid #ccc;    /* Une bordure légère */
+    border-radius: 8px;        /* Coins arrondis */
+    font-weight: bold;
+    color: #444;
+    display: inline-block;
+    text-align: center;
+}

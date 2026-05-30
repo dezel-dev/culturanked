@@ -102,4 +102,88 @@ function getPassword($email)
 
     return $res;
 }
+
+function addPlayerToMatchmaking($playerId, $gamemode, $theme) {
+    $SQL = "INSERT INTO matchmaking(`player_id`, `gamemode`, `theme`) VALUES('$playerId', '$gamemode', '$theme')";
+    return SQLInsert($SQL);
+}
+
+function isPlayerInQueue($playerId) {
+    $SQL = "SELECT player_id FROM matchmaking WHERE `player_id`='$playerId'";
+    $res = SQLGetChamp($SQL);
+    if ($res == "") {
+        return 0;
+    }
+    return 1;
+}
+
+function removePlayerFromMatchmaking($playerId) {
+    $SQL = "DELETE FROM matchmaking WHERE `player_id`='$playerId'";
+    return SQLDelete($SQL);
+}
+
+function checkActiveMatch($playerId) {
+    $SQL = "SELECT game_id FROM game_players 
+            JOIN games ON games.id = game_players.game_id 
+            WHERE user_id = '$playerId' AND status = 'waiting'";
+    return SQLGetChamp($SQL); 
+}
+
+function getPlayerElo($playerId) {
+    $SQL = "SELECT elo FROM users WHERE `id`='$playerId'";
+    return SQLGetChamp($SQL);
+}
+
+function findOpponent($playerId, $gamemode, $theme) {
+    $elo = getPlayerElo($playerId);
+    
+    $SQL = "SELECT m.player_id 
+            FROM matchmaking m
+            JOIN users u ON m.player_id = u.id
+            WHERE m.player_id != '$playerId' 
+            AND m.gamemode = '$gamemode' 
+            AND m.theme = '$theme'
+            ORDER BY ABS(u.elo - $elo) ASC
+            LIMIT 1";
+            
+    return SQLGetChamp($SQL);
+}
+
+function createMatch($id1, $id2, $gamemode, $theme) {
+    if ($theme === 'random') {
+        $themesPossibles = ['culture', 'art', 'histoire', 'math'];
+        $theme = $themesPossibles[array_rand($themesPossibles)];
+    }
+
+    $SQL_game = "INSERT INTO games (`gamemode`, `theme`) VALUES ('$gamemode', '$theme')";
+    $game_id = SQLInsert($SQL_game);
+
+    $SQL_p1 = "INSERT INTO game_players (`game_id`, `user_id`) VALUES ('$game_id', '$id1')";
+    $SQL_p2 = "INSERT INTO game_players (`game_id`, `user_id`) VALUES ('$game_id', '$id2')";
+    SQLInsert($SQL_p1);
+    SQLInsert($SQL_p2);
+
+    $SQL_questions = "SELECT id FROM questions WHERE theme = '$theme' ORDER BY RAND() LIMIT 10";
+    $questions = parcoursRs(SQLSelect($SQL_questions));
+
+    $ordre = 1;
+    foreach ($questions as $q) {
+        $question_id = $q['id'];
+        $SQL_insert_q = "INSERT INTO game_questions (`game_id`, `question_id`, `order`) 
+                         VALUES ('$game_id', '$question_id', '$ordre')";
+        SQLInsert($SQL_insert_q);
+        $ordre++;
+    }
+
+    $SQL_del = "DELETE FROM matchmaking WHERE player_id IN ('$id1', '$id2')";
+    SQLDelete($SQL_del);
+
+    return $game_id;
+}
+
+function getPlayerMatchmakingInfo($playerId) {
+    $SQL = "SELECT gamemode, theme FROM matchmaking WHERE player_id = '$playerId'";
+    $res = parcoursRs(SQLSelect($SQL));
+    return (count($res) > 0) ? $res[0] : false;
+}
 ?>

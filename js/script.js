@@ -1,3 +1,4 @@
 function globalLoad() {
     registerLoad();
+    playLoad();
 }

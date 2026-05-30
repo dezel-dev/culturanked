@@ -101,9 +101,66 @@ if ($action = valider("action"))
           // Un compte est associé;
 	        $_SESSION["pseudo"] = $username;
 	        $_SESSION["idUser"] = $id;
-	        $_SESSION["connecte"] = true;
+	        $_SESSION["connecte"] = 1;
+          $_SESSION["inQueue"] = 0;
           header("Location:../index.php?view=lobby");
           die(""); 
+        }
+        break;
+
+      case 'launchRanked':
+        // On le fait rentrer dans la file d'attente
+        if (valider('connecte', 'SESSION')) {
+          $id = $_SESSION['idUser'];
+          $gamemode = 'ranked';
+          $theme = 'random';
+          if (!isPlayerInQueue($id)) {
+            addPlayerToMatchmaking($id, $gamemode, $theme);
+          }
+          $_SESSION["inQueue"] = 1;
+          header("Location:../index.php?view=lobby&mode=ranked");
+          die("");
+        }
+        break;
+
+        case 'stopRanked':
+        // On le fait retirer de la file d'attente
+        if (valider('connecte', 'SESSION')) {
+          $id = $_SESSION['idUser'];
+          if (isPlayerInQueue($id)) {
+            removePlayerFromMatchmaking($id);
+          }
+          $_SESSION["inQueue"] = 0;
+          header("Location:../index.php?view=lobby&mode=ranked");
+          die("");
+        }
+        break;
+
+        case 'launchClassic':
+        // On le fait rentrer dans la file d'attente
+        if (valider('connecte', 'SESSION')) {
+          $id = $_SESSION['idUser'];
+          $gamemode = 'classic';
+          $theme = valider('theme');
+          if (!isPlayerInQueue($id)) {
+            addPlayerToMatchmaking($id, $gamemode, $theme);
+          }
+          $_SESSION["inQueue"] = 1;
+          header("Location:../index.php?view=lobby&mode=classic");
+          die("");
+        }
+        break;
+
+        case 'stopClassic':
+        // On le fait retirer de la file d'attente
+        if (valider('connecte', 'SESSION')) {
+          $id = $_SESSION['idUser'];
+          if (isPlayerInQueue($id)) {
+            removePlayerFromMatchmaking($id);
+          }
+          $_SESSION["inQueue"] = 0;
+          header("Location:../index.php?view=lobby&mode=classic");
+          die("");
         }
         break;
     
